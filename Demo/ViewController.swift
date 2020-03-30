@@ -23,7 +23,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         DDLog.add(DDASLLogger.sharedInstance) // TTY = Xcode console
-        
+        let file = Bundle(for: KingHttpProxy.self).path(forResource: "Surge", ofType: "conf")
+        ACL.shared?.load(configFile: file!)
         delay(1) {
             // ACL.shared?.load(configFile: "your config file")
             self.server.forwardProxy = ForwardProxy(type: .socks5, host: "127.0.0.1", port: 8012)

@@ -21,8 +21,9 @@ enum RuleType: String {
 
 enum RuleAction: String {
     case direct = "DIRECT"
-    case proxy = "Proxy"
+    case proxy = "PROXY"
     case reject = "REJECT"
+    case noresolve = "no-resolve"
 }
 
 class Rule {

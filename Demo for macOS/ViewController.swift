@@ -19,7 +19,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
+        DDLog.add(DDTTYLogger.sharedInstance!) // TTY = Xcode console
 
 //        let queue = DispatchQueue(label: "abc")
 //        queue.async {
@@ -29,14 +29,14 @@ class ViewController: NSViewController {
 //        DispatchQueue.concurrentPerform(iterations: 3) { (n) in
 //            print("hello \(n)")
 //        }
-        dnsServer.start(on: 5544)
+        dnsServer.start(on: 53)
     }
 
     @IBAction func btnClicked(_ sender: Any) {
-        httpServer.forwardProxy = ForwardProxy(type: .http, host: "127.0.0.1", port: 8888)
-        _ = httpServer.start(on: 8900)
-//        let file = Bundle(for: KingHttpProxy.self).path(forResource: "Surge", ofType: "conf")
-//        ACL.shared?.load(configFile: file!)
+//        httpServer.forwardProxy = ForwardProxy(type: .http, host: "127.0.0.1", port: 8888)
+//        _ = httpServer.start(on: 8900)
+        let file = Bundle(for: KingHttpProxy.self).path(forResource: "Surge", ofType: "conf")
+        ACL.shared?.load(configFile: file!)
 //        guard httpServer.start(on: 8898) > 0 else { return }
 //        httpServer.forwardProxy = ForwardProxy(type: .socks5, host: "127.0.0.1", port: 8899)
 //
