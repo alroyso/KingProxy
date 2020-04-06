@@ -1,9 +1,0 @@
-[submodule "Carthage/Checkouts/MMDB-Swift"]
-	path = Carthage/Checkouts/MMDB-Swift
-	url = https://github.com/alroyso/MMDB-Swift.git
-[submodule "Carthage/Checkouts/CocoaAsyncSocket"]
-	path = Carthage/Checkouts/CocoaAsyncSocket
-	url = https://github.com/robbiehanson/CocoaAsyncSocket.git
-[submodule "Carthage/Checkouts/CocoaLumberjack"]
-	path = Carthage/Checkouts/CocoaLumberjack
-	url = https://github.com/CocoaLumberjack/CocoaLumberjack.git
