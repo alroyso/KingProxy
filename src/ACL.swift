@@ -10,6 +10,53 @@ import Foundation
 import MMDB
 import CocoaLumberjackSwift
 
+enum Validate {
+    case email(_: String)
+    case phoneNum(_: String)
+    case carNum(_: String)
+    case username(_: String)
+    case password(_: String)
+    case nickname(_: String)
+
+    case URL(_: String)
+    case IP(_: String)
+
+
+    var isRight: Bool {
+        var predicateStr:String!
+        var currObject:String!
+        switch self {
+        case let .email(str):
+            predicateStr = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
+            currObject = str
+        case let .phoneNum(str):
+            predicateStr = "^((13[0-9])|(15[^4,\\D]) |(17[0,0-9])|(18[0,0-9]))\\d{8}$"
+            currObject = str
+        case let .carNum(str):
+            predicateStr = "^[A-Za-z]{1}[A-Za-z_0-9]{5}$"
+            currObject = str
+        case let .username(str):
+            predicateStr = "^[A-Za-z0-9]{6,20}+$"
+            currObject = str
+        case let .password(str):
+            predicateStr = "^[a-zA-Z0-9]{6,20}+$"
+            currObject = str
+        case let .nickname(str):
+            predicateStr = "^[\\u4e00-\\u9fa5]{4,8}$"
+            currObject = str
+        case let .URL(str):
+            predicateStr = "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$"
+            currObject = str
+        case let .IP(str):
+            predicateStr = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+            currObject = str
+        }
+
+        let predicate =  NSPredicate(format: "SELF MATCHES %@" ,predicateStr)
+        return predicate.evaluate(with: currObject)
+    }
+}
+
 enum RuleType: String {
     case domain = "DOMAIN"
     case domainSuffix = "DOMAIN-SUFFIX"
@@ -121,7 +168,7 @@ public class ACL {
                 }
             case .geoip:
                 if let country = db?.lookup(ip) {
-                    if country.isoCode.lowercased() == rule.value! {
+                    if country.isoCode.lowercased() != rule.value! {
                         DDLogInfo("country \(country.isoCode), \(rule.value ?? "")")
                         DDLogInfo("use rule: \(rule.description)")
                         return rule.action == .proxy
@@ -136,28 +183,35 @@ public class ACL {
         return defaultAction == .proxy
     }
 
+    //返回true 可代理，返回false 走直连
     public func useProxy(host: String) -> Bool {
         if isEmpty {
             DDLogInfo("[acl] global mode or no rules")
             return true // default rule
         }
 
-        if !useDNS { // without dns module
-            return useProxyWithoutDNS(host:host)
-        }
+//        if !useDNS { // without dns module
+//            return useProxyWithoutDNS(host:host)
+//        }
 
         var ip = ""
         var domain = ""
+        
+        //validIP(ip: <#T##String#>)
 
-        if !validIP(ip: host) {
-            ip = toIP(from: host)
-            if isFakeIP(ip: ip) {
+        if Validate.IP(host).isRight {
+             
+            if isFakeIP(ip: host) {
                 DDLogInfo("[acl] fake ip: host")
                 return true
             }
-            domain = host
+            ip = host
         } else {
-            domain = DNSServer.default.reverse(ip: ip) ?? ""
+            
+            if isFakeIP(ip: host) {
+                 domain = DNSServer.default.reverse(ip: ip) ?? ""
+            }
+           domain = host
         }
 
         // apply domain rule
@@ -188,10 +242,11 @@ public class ACL {
                 }
             case .geoip:
                 if let country = db?.lookup(ip) {
-                    if country.isoCode.lowercased() == rule.value! {
-                        DDLogInfo("country \(country.isoCode), \(rule.value ?? "")")
-                        DDLogInfo("use rule: \(rule.description)")
-                        return rule.action == .proxy
+                    //默认判断ip 是不是中国如果不是直接返回可代理，true
+                    if country.isoCode.lowercased() != rule.value! {
+                        //DDLogInfo("country \(country.isoCode), cn ")
+                        DDLogInfo("use rule: \(country.isoCode)")
+                        return true
                     }
                 }
             default:
@@ -199,7 +254,7 @@ public class ACL {
             }
         }
 
-        return defaultAction == .proxy
+        return defaultAction == .direct
     }
 
     /// 废弃
@@ -232,7 +287,7 @@ public class ACL {
         return regex.matches(in: ip, options: [], range: range).count > 0
     }
 
-    private func match(ip: String, ipSegment: String) -> Bool {
+    public func match(ip: String, ipSegment: String) -> Bool {
         if ip.count == 0 {
             return false
         }
@@ -243,7 +298,12 @@ public class ACL {
         let mask = Int(arr[1])!
         let sourceIP = toNumber(ipv4: arr[0])
         let dstIP = toNumber(ipv4: ip)
-        return (dstIP & (0xff << mask)) == sourceIP
+        
+        let ips = (dstIP & (0xff << mask)) 
+        
+        let ok  = (dstIP & (0xff << mask)) == sourceIP
+        
+        return ok
     }
 
     private func toNumber(ipv4: String) -> UInt32 {

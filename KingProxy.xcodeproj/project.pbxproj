@@ -85,6 +85,14 @@
 		0DEA396E2022B69300B93F0A /* KingSocksProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEA396C2022B69300B93F0A /* KingSocksProxy.swift */; };
 		0DEA39702022B86400B93F0A /* SocksSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEA396F2022B86400B93F0A /* SocksSession.swift */; };
 		0DEA39712022B86400B93F0A /* SocksSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEA396F2022B86400B93F0A /* SocksSession.swift */; };
+		3B12CC022460F382008CA406 /* GeoIP2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 3B12CC012460F382008CA406 /* GeoIP2-Country.mmdb */; };
+		3B12CC032460F382008CA406 /* GeoIP2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 3B12CC012460F382008CA406 /* GeoIP2-Country.mmdb */; };
+		3B12CC052460F391008CA406 /* GeoIP2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 3B12CC042460F391008CA406 /* GeoIP2-Country.mmdb */; };
+		3B12CC062460F391008CA406 /* GeoIP2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 3B12CC042460F391008CA406 /* GeoIP2-Country.mmdb */; };
+		5A0F468BFBB7774B59363200 /* DispatchSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */; };
+		5A0F46ED3AEAD3F1FD329770 /* pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F49E005103387F6C34EFA /* pool.swift */; };
+		5A0F4D263BF3572DEF6DEA59 /* DispatchSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */; };
+		5A0F4F1E0CD1ECC0685A01CB /* pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F49E005103387F6C34EFA /* pool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +197,10 @@
 		0DEA39622021B1F400B93F0A /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/Mac/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		0DEA396C2022B69300B93F0A /* KingSocksProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingSocksProxy.swift; sourceTree = "<group>"; };
 		0DEA396F2022B86400B93F0A /* SocksSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocksSession.swift; sourceTree = "<group>"; };
+		3B12CC012460F382008CA406 /* GeoIP2-Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GeoIP2-Country.mmdb"; path = "src/GeoIP2-Country.mmdb"; sourceTree = SOURCE_ROOT; };
+		3B12CC042460F391008CA406 /* GeoIP2-Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeoIP2-Country.mmdb"; sourceTree = "<group>"; };
+		5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchSemaphore.swift; sourceTree = "<group>"; };
+		5A0F49E005103387F6C34EFA /* pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +268,7 @@
 		0D2E50A8204BFC8300BBFBC3 /* DNS */ = {
 			isa = PBXGroup;
 			children = (
+				3B12CC012460F382008CA406 /* GeoIP2-Country.mmdb */,
 				0D2E50A9204BFC8300BBFBC3 /* Message.swift */,
 				0D2E50AA204BFC8300BBFBC3 /* IP.swift */,
 				0D2E50AB204BFC8300BBFBC3 /* Integer+Data.swift */,
@@ -323,12 +336,15 @@
 				0DBFFFCC204E94290003A430 /* gfwlist.data */,
 				0DEA38B020201F6F00B93F0A /* ACL.swift */,
 				0DEA38B120201F6F00B93F0A /* Surge.conf */,
+				3B12CC042460F391008CA406 /* GeoIP2-Country.mmdb */,
 				0DEA38B220201F6F00B93F0A /* HttpHeader.swift */,
 				0DEA38B320201F6F00B93F0A /* KingHttpProxy.swift */,
 				0DEA396C2022B69300B93F0A /* KingSocksProxy.swift */,
 				0DEA38B520201F6F00B93F0A /* HttpSession.swift */,
 				0DEA396F2022B86400B93F0A /* SocksSession.swift */,
 				0DEA38C82020209600B93F0A /* Util.swift */,
+				5A0F49E005103387F6C34EFA /* pool.swift */,
+				5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -569,6 +585,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B12CC052460F391008CA406 /* GeoIP2-Country.mmdb in Resources */,
+				3B12CC022460F382008CA406 /* GeoIP2-Country.mmdb in Resources */,
 				0DBFFFCD204E94290003A430 /* gfwlist.data in Resources */,
 				0DEA38B920201F6F00B93F0A /* Surge.conf in Resources */,
 			);
@@ -588,6 +606,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B12CC062460F391008CA406 /* GeoIP2-Country.mmdb in Resources */,
+				3B12CC032460F382008CA406 /* GeoIP2-Country.mmdb in Resources */,
 				0DBFFFCE204E94290003A430 /* gfwlist.data in Resources */,
 				0DEA39362020695B00B93F0A /* Surge.conf in Resources */,
 			);
@@ -666,6 +686,8 @@
 				0DEA38B820201F6F00B93F0A /* ACL.swift in Sources */,
 				0D2E50C7204C35C000BBFBC3 /* Bytes.swift in Sources */,
 				0DEA38BA20201F6F00B93F0A /* HttpHeader.swift in Sources */,
+				5A0F46ED3AEAD3F1FD329770 /* pool.swift in Sources */,
+				5A0F468BFBB7774B59363200 /* DispatchSemaphore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,6 +719,8 @@
 				0DEA39352020695B00B93F0A /* ACL.swift in Sources */,
 				0D2E50C1204C35BF00BBFBC3 /* Bytes.swift in Sources */,
 				0DEA393A2020695B00B93F0A /* HttpSession.swift in Sources */,
+				5A0F4F1E0CD1ECC0685A01CB /* pool.swift in Sources */,
+				5A0F4D263BF3572DEF6DEA59 /* DispatchSemaphore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1074,10 +1098,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6Q23TW92M4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1099,10 +1123,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6Q23TW92M4;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

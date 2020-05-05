@@ -35,7 +35,8 @@ public class KingHttpProxy: NSObject {
     
     private var address: String = "127.0.0.1"
     private var port: UInt16 = 0
-    
+
+
     private var sessions = Set<HttpSession>()
     private var listenSocket: GCDAsyncSocket!
     
@@ -51,6 +52,7 @@ public class KingHttpProxy: NSObject {
     public convenience init(address: String) {
         self.init(address: address)
         self.address = address
+
     }
     
     /// Start server, return lister port if succes else return 0
@@ -95,6 +97,7 @@ extension KingHttpProxy: GCDAsyncSocketDelegate, HttpSessionDelegate {
             self.sessions.insert(session)
             session.delegate = self
             DDLogInfo("[http] New session, count:\(self.sessions.count)")
+
         }
     }
     

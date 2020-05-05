@@ -21,7 +21,7 @@ internal protocol HttpSessionDelegate: class {
 
 public class HttpSession: NSObject {
     
-    private enum Status {
+    enum Status {
         case initial
         case readyForward
         case forwarding
@@ -106,7 +106,7 @@ extension HttpSession: GCDAsyncSocketDelegate {
 
             if header.isConnect { // https
                 isSecure = true
-                if self.forwardProxy != nil && useProxy(rule: header.host) {
+                if self.forwardProxy != nil && useProxy(rule: header.host)  {
                     guard let proxy = self.forwardProxy else { return }
                     do {
                         DDLogInfo("[connect] \(proxy.host):\(proxy.port)")
@@ -125,7 +125,7 @@ extension HttpSession: GCDAsyncSocketDelegate {
                 }
             } else { // http
                 isSecure = false
-                if self.forwardProxy != nil && useProxy(rule: header.host) {
+                if self.forwardProxy != nil && useProxy(rule: header.host)  {
                     guard let proxy = self.forwardProxy else { return }
                     do {
                         DDLogInfo("[connect] \(proxy.host):\(proxy.port)")

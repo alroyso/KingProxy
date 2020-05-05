@@ -20,7 +20,14 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         DDLog.add(DDTTYLogger.sharedInstance!) // TTY = Xcode console
-
+        let file = Bundle(for: KingHttpProxy.self).path(forResource: "Surge", ofType: "conf")
+        ACL.shared?.load(configFile: file!)
+        let mmdbfile = Bundle(for: KingHttpProxy.self).path(forResource: "GeoIP2-Country", ofType: "mmdb")
+        ACL.shared?.loadMdb(configfile: mmdbfile!)
+        //ACL.shared?.
+        
+        let ok = ACL.shared?.useProxy(host: "91.108.56.104")
+        print(ok)
 //        let queue = DispatchQueue(label: "abc")
 //        queue.async {
 //            print("do")
@@ -29,19 +36,23 @@ class ViewController: NSViewController {
 //        DispatchQueue.concurrentPerform(iterations: 3) { (n) in
 //            print("hello \(n)")
 //        }
-        dnsServer.start(on: 53)
+        dnsServer.start(on: 5353)
     }
 
     @IBAction func btnClicked(_ sender: Any) {
 //        httpServer.forwardProxy = ForwardProxy(type: .http, host: "127.0.0.1", port: 8888)
 //        _ = httpServer.start(on: 8900)
-        let file = Bundle(for: KingHttpProxy.self).path(forResource: "Surge", ofType: "conf")
-        ACL.shared?.load(configFile: file!)
+
 //        guard httpServer.start(on: 8898) > 0 else { return }
-//        httpServer.forwardProxy = ForwardProxy(type: .socks5, host: "127.0.0.1", port: 8899)
+        
+        //DNSServer.default.start(on: 53)
+        
+        
+        httpServer.forwardProxy = ForwardProxy(type: .socks5, host: "127.0.0.1", port: 1080)
+        httpServer.start(on: 8887)
 //
-//        socksServer.forwardProxy = ForwardProxy(type: .socks5, host: "127.0.0.1", port: 1086)
-//        _ = socksServer.start(on: 8899)
+        socksServer.forwardProxy = ForwardProxy(type: .socks5, host: "127.0.0.1", port: 1080)
+        _ = socksServer.start(on: 8899)
         
 //        DNSServer.shared.resolve(domain: "baidu.com")
 //        let domain = "oschina.net"

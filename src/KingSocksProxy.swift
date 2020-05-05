@@ -24,8 +24,8 @@ public class KingSocksProxy: NSObject {
     
     public override init() {
         super.init()
-        
-        let queue = DispatchQueue(label: "com.purkylin.kingproxy.socks", qos: .default, attributes: .concurrent)
+
+        let queue: DispatchQueue = DispatchQueue(label: "com.purkylin.kingproxy.socks", qos: .default, attributes: .concurrent)
         listenSocket = GCDAsyncSocket(delegate: self, delegateQueue: queue)
     }
     
@@ -45,9 +45,9 @@ public class KingSocksProxy: NSObject {
             }
             
             #if os(macOS)
-                try listenSocket.accept(onPort: port)
+            try listenSocket.accept(onPort: port)
             #else
-                try listenSocket.accept(onInterface: address, port: port)
+            try listenSocket.accept(onInterface: address, port: port)
             #endif
             
             isRunning = true
