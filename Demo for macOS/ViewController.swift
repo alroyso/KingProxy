@@ -26,8 +26,7 @@ class ViewController: NSViewController {
         ACL.shared?.loadMdb(configfile: mmdbfile!)
         //ACL.shared?.
         
-        let ok = ACL.shared?.useProxy(host: "91.108.56.104")
-        print(ok)
+
 //        let queue = DispatchQueue(label: "abc")
 //        queue.async {
 //            print("do")
@@ -36,7 +35,7 @@ class ViewController: NSViewController {
 //        DispatchQueue.concurrentPerform(iterations: 3) { (n) in
 //            print("hello \(n)")
 //        }
-        dnsServer.start(on: 5353)
+        //dnsServer.start(on: 5353)
     }
 
     @IBAction func btnClicked(_ sender: Any) {
@@ -46,13 +45,27 @@ class ViewController: NSViewController {
 //        guard httpServer.start(on: 8898) > 0 else { return }
         
         //DNSServer.default.start(on: 53)
+        var ok = ACL.shared?.useProxy(host: "www.baidu.com")
+        print(ok)
+
+
+        ok = ACL.shared?.useProxy(host: "8.8.8.8")
+        print(ok)
+
+        ok = ACL.shared?.useProxy(host: "8.8.4.4")
+        print(ok)
+
+        ok = ACL.shared?.useProxy(host: "1.1.1.1")
+        print(ok)
+
+        ok = ACL.shared?.useProxy(host: "91.108.56.104")
+        print(ok)
         
-        
-        httpServer.forwardProxy = ForwardProxy(type: .socks5, host: "127.0.0.1", port: 1080)
-        httpServer.start(on: 8887)
-//
-        socksServer.forwardProxy = ForwardProxy(type: .socks5, host: "127.0.0.1", port: 1080)
-        _ = socksServer.start(on: 8899)
+//        httpServer.forwardProxy = ForwardProxy(type: .socks5, host: "127.0.0.1", port: 1080)
+//        httpServer.start(on: 8887)
+////
+//        socksServer.forwardProxy = ForwardProxy(type: .socks5, host: "127.0.0.1", port: 1080)
+//        _ = socksServer.start(on: 8899)
         
 //        DNSServer.shared.resolve(domain: "baidu.com")
 //        let domain = "oschina.net"

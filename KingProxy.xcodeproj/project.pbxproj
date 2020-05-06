@@ -89,9 +89,11 @@
 		3B12CC032460F382008CA406 /* GeoIP2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 3B12CC012460F382008CA406 /* GeoIP2-Country.mmdb */; };
 		3B12CC052460F391008CA406 /* GeoIP2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 3B12CC042460F391008CA406 /* GeoIP2-Country.mmdb */; };
 		3B12CC062460F391008CA406 /* GeoIP2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 3B12CC042460F391008CA406 /* GeoIP2-Country.mmdb */; };
+		5A0F437B39625E7DD778DCA5 /* IPAddress_v4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F4B106E28380F0A196DE9 /* IPAddress_v4.swift */; };
 		5A0F468BFBB7774B59363200 /* DispatchSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */; };
 		5A0F46ED3AEAD3F1FD329770 /* pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F49E005103387F6C34EFA /* pool.swift */; };
 		5A0F4D263BF3572DEF6DEA59 /* DispatchSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */; };
+		5A0F4EEBFA59BEC0E19B7B90 /* IPAddress_v4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F4B106E28380F0A196DE9 /* IPAddress_v4.swift */; };
 		5A0F4F1E0CD1ECC0685A01CB /* pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F49E005103387F6C34EFA /* pool.swift */; };
 /* End PBXBuildFile section */
 
@@ -201,6 +203,7 @@
 		3B12CC042460F391008CA406 /* GeoIP2-Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeoIP2-Country.mmdb"; sourceTree = "<group>"; };
 		5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchSemaphore.swift; sourceTree = "<group>"; };
 		5A0F49E005103387F6C34EFA /* pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pool.swift; sourceTree = "<group>"; };
+		5A0F4B106E28380F0A196DE9 /* IPAddress_v4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPAddress_v4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +348,7 @@
 				0DEA38C82020209600B93F0A /* Util.swift */,
 				5A0F49E005103387F6C34EFA /* pool.swift */,
 				5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */,
+				5A0F4B106E28380F0A196DE9 /* IPAddress_v4.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -688,6 +692,7 @@
 				0DEA38BA20201F6F00B93F0A /* HttpHeader.swift in Sources */,
 				5A0F46ED3AEAD3F1FD329770 /* pool.swift in Sources */,
 				5A0F468BFBB7774B59363200 /* DispatchSemaphore.swift in Sources */,
+				5A0F437B39625E7DD778DCA5 /* IPAddress_v4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +726,7 @@
 				0DEA393A2020695B00B93F0A /* HttpSession.swift in Sources */,
 				5A0F4F1E0CD1ECC0685A01CB /* pool.swift in Sources */,
 				5A0F4D263BF3572DEF6DEA59 /* DispatchSemaphore.swift in Sources */,
+				5A0F4EEBFA59BEC0E19B7B90 /* IPAddress_v4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
