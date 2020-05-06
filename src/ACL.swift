@@ -246,27 +246,12 @@ public class ACL {
             return false
         }
 
-        do {
-            let sourceIP = try IPNetwork_v4(ipSegment)
+        let arr = ipSegment.components(separatedBy: "/")
+        guard arr.count == 2 else { return false }
 
-            guard let iparr = sourceIP.usableHosts else {
-                return false
-            }
-
-            for item in  iparr {
-
-                guard let ipaddr = item.address else{
-                    return false
-                }
-                if ipaddr.contains(ip) {
-                    return true
-                }
-            }
-
-        } catch {
-
-            return false
-        }
+        let mask = Int(arr[1])!
+        let sourceIP = toNumber(ipv4: arr[0])
+        let dstIP = toNumber(ipv4: ip)
         
 
         return false

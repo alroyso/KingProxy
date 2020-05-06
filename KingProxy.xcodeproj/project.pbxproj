@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,10 +37,10 @@
 		0DEA38BA20201F6F00B93F0A /* HttpHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEA38B220201F6F00B93F0A /* HttpHeader.swift */; };
 		0DEA38BB20201F6F00B93F0A /* KingHttpProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEA38B320201F6F00B93F0A /* KingHttpProxy.swift */; };
 		0DEA38BD20201F6F00B93F0A /* HttpSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEA38B520201F6F00B93F0A /* HttpSession.swift */; };
-		0DEA38C420201FB100B93F0A /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA38C020201FB000B93F0A /* CocoaLumberjackSwift.framework */; };
-		0DEA38C520201FB100B93F0A /* MMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA38C120201FB000B93F0A /* MMDB.framework */; };
-		0DEA38C620201FB100B93F0A /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA38C220201FB100B93F0A /* CocoaLumberjack.framework */; };
-		0DEA38C720201FB100B93F0A /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA38C320201FB100B93F0A /* CocoaAsyncSocket.framework */; };
+		0DEA38C420201FB100B93F0A /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA38C020201FB000B93F0A /* CocoaLumberjackSwift.framework */; platformFilter = ios; };
+		0DEA38C520201FB100B93F0A /* MMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA38C120201FB000B93F0A /* MMDB.framework */; platformFilter = ios; };
+		0DEA38C620201FB100B93F0A /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA38C220201FB100B93F0A /* CocoaLumberjack.framework */; platformFilter = ios; };
+		0DEA38C720201FB100B93F0A /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEA38C320201FB100B93F0A /* CocoaAsyncSocket.framework */; platformFilter = ios; };
 		0DEA38C92020209700B93F0A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEA38C82020209600B93F0A /* Util.swift */; };
 		0DEA390A2020218E00B93F0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEA39092020218E00B93F0A /* AppDelegate.swift */; };
 		0DEA390C2020218E00B93F0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEA390B2020218E00B93F0A /* ViewController.swift */; };
@@ -89,11 +89,9 @@
 		3B12CC032460F382008CA406 /* GeoIP2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 3B12CC012460F382008CA406 /* GeoIP2-Country.mmdb */; };
 		3B12CC052460F391008CA406 /* GeoIP2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 3B12CC042460F391008CA406 /* GeoIP2-Country.mmdb */; };
 		3B12CC062460F391008CA406 /* GeoIP2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 3B12CC042460F391008CA406 /* GeoIP2-Country.mmdb */; };
-		5A0F437B39625E7DD778DCA5 /* IPAddress_v4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F4B106E28380F0A196DE9 /* IPAddress_v4.swift */; };
 		5A0F468BFBB7774B59363200 /* DispatchSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */; };
 		5A0F46ED3AEAD3F1FD329770 /* pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F49E005103387F6C34EFA /* pool.swift */; };
 		5A0F4D263BF3572DEF6DEA59 /* DispatchSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */; };
-		5A0F4EEBFA59BEC0E19B7B90 /* IPAddress_v4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F4B106E28380F0A196DE9 /* IPAddress_v4.swift */; };
 		5A0F4F1E0CD1ECC0685A01CB /* pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F49E005103387F6C34EFA /* pool.swift */; };
 /* End PBXBuildFile section */
 
@@ -203,7 +201,6 @@
 		3B12CC042460F391008CA406 /* GeoIP2-Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeoIP2-Country.mmdb"; sourceTree = "<group>"; };
 		5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchSemaphore.swift; sourceTree = "<group>"; };
 		5A0F49E005103387F6C34EFA /* pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pool.swift; sourceTree = "<group>"; };
-		5A0F4B106E28380F0A196DE9 /* IPAddress_v4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPAddress_v4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,7 +345,6 @@
 				0DEA38C82020209600B93F0A /* Util.swift */,
 				5A0F49E005103387F6C34EFA /* pool.swift */,
 				5A0F4833B2F5B111AE88DA36 /* DispatchSemaphore.swift */,
-				5A0F4B106E28380F0A196DE9 /* IPAddress_v4.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -692,7 +688,6 @@
 				0DEA38BA20201F6F00B93F0A /* HttpHeader.swift in Sources */,
 				5A0F46ED3AEAD3F1FD329770 /* pool.swift in Sources */,
 				5A0F468BFBB7774B59363200 /* DispatchSemaphore.swift in Sources */,
-				5A0F437B39625E7DD778DCA5 /* IPAddress_v4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,7 +721,6 @@
 				0DEA393A2020695B00B93F0A /* HttpSession.swift in Sources */,
 				5A0F4F1E0CD1ECC0685A01CB /* pool.swift in Sources */,
 				5A0F4D263BF3572DEF6DEA59 /* DispatchSemaphore.swift in Sources */,
-				5A0F4EEBFA59BEC0E19B7B90 /* IPAddress_v4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,7 +788,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = KingProxyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.purkylin.KingProxyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -817,7 +815,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = KingProxyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.purkylin.KingProxyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -938,7 +940,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -963,7 +966,11 @@
 				INFOPLIST_FILE = "KingProxy-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.purkylin.KingProxy;
 				PRODUCT_MODULE_NAME = KingProxy;
 				PRODUCT_NAME = KingProxy;
@@ -991,7 +998,11 @@
 				INFOPLIST_FILE = "KingProxy-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.purkylin.KingProxy;
 				PRODUCT_MODULE_NAME = KingProxy;
 				PRODUCT_NAME = KingProxy;
@@ -1013,7 +1024,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Demo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.purkylin.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1033,7 +1047,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Demo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.purkylin.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1059,7 +1076,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "KingProxy-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.purkylin.KingProxy;
 				PRODUCT_NAME = KingProxy;
@@ -1088,7 +1109,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "KingProxy-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.purkylin.KingProxy;
 				PRODUCT_NAME = KingProxy;
@@ -1114,7 +1139,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "Demo for macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.purkylin.Demo-for-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1139,7 +1167,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "Demo for macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.purkylin.Demo-for-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
