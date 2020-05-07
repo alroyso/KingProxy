@@ -150,9 +150,9 @@ public class ACL {
         var domain = ""
 
         if !validIP(ip: host) {
-            //ip = toIP(from: host)
+            ip = toIP(from: host)
 
-            ip = dnsResolver.resolve(domain: host) ?? ""
+            //ip = dnsResolver.resolve(domain: host) ?? ""
             if isFakeIP(ip: ip) {
                 DDLogInfo("[acl] fake ip: host")
                 return true
